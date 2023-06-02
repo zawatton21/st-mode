@@ -75,6 +75,7 @@
 	    "VAR_TEMP" "WHILE" "WITH"
       ))
 
+(defvar iec61131-operators nil "Operators to be highlighted.")
 (setq iec61131-operators
   (list "(" ")" "**" "NOT" "*" "/" "MOD" "+" "-" "<" ">" "<=" ">=" "=" "<>" "AND" "&" "XOR" "OR"))
 
