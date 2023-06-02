@@ -120,6 +120,7 @@
 (defvar iec61131-bool-regex nil)
 (setq iec61131-bool-regex (rx word-start (or "TRUE" "FALSE" "BIT#1" "BIT#0") word-end))
 
+(defvar iec61131-font-lock-keywords "" nil)
 (setq iec61131-font-lock-keywords
   `(
     (,iec61131-multi-line-comment-regex . font-lock-comment-face)
