@@ -72,8 +72,12 @@
 	    "SINGLE" "STRUCT" "TASK" "THEN" "TO"
 	    "TYPE" "UNTIL" "VAR" "VAR_ACCESS" "VAR_CONFIG"
 	    "VAR_EXTERNAL" "VAR_GLOBAL" "VAR_INPUT" "VAR_IN_OUT"
-	    "VAR_TEMP" "WHILE" "WITH"))
+	    "VAR_TEMP" "WHILE" "WITH"
+      ))
 
+
+(setq iec61131-operators
+  (list "AND" "OR" "NOT" "+" "-" "*" "/"))
 
 (defvar iec61131-multi-line-comment-regex nil
   "Regex for multi-line comments.")
@@ -120,7 +124,7 @@
 (setq iec61131-font-lock-keywords
   `(
     (,iec61131-multi-line-comment-regex . font-lock-comment-face)
-    (,iec61131-string-regex . font-lock-constant-face)
+    (,iec61131-string-regex . font-lock-string-face)
     (,iec61131-time-regex . font-lock-constant-face)
     (,iec61131-datetime-regex . font-lock-constant-face)
     (,iec61131-date-regex . font-lock-constant-face)
@@ -129,8 +133,9 @@
     ("\\<.*#.*\\>" . font-lock-constant-face)
     ("\\<[0-9]+\\(\\.[0-9]+\\)?\\>" . font-lock-constant-face)
     (,iec61131-bool-regex  . font-lock-constant-face)
-    (,(concat "\\<" (regexp-opt iec61131-keywords) "\\>") . font-lock-builtin-face)))
-
+    (,(concat "\\<" (regexp-opt iec61131-keywords) "\\>") . font-lock-builtin-face)
+    (,(concat "\\<" (regexp-opt iec61131-operators) "\\>") . font-lock-keyword-face) ;; 追加
+    ))
 
 (defun iec61131-indent-line ()
   "Identation function for iec61131-mode."
