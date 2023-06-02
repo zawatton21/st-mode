@@ -75,9 +75,8 @@
 	    "VAR_TEMP" "WHILE" "WITH"
       ))
 
-
 (setq iec61131-operators
-  (list "AND" "OR" "NOT" "+" "-" "*" "/"))
+  (list "(" ")" "**" "NOT" "*" "/" "MOD" "+" "-" "<" ">" "<=" ">=" "=" "<>" "AND" "&" "XOR" "OR"))
 
 (defvar iec61131-multi-line-comment-regex nil
   "Regex for multi-line comments.")
