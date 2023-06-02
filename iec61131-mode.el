@@ -77,7 +77,7 @@
 
 (defvar iec61131-operators nil "Operators to be highlighted.")
 (setq iec61131-operators
-  (list "(" ")" "**" "NOT" "*" "/" "MOD" "+" "-" "<" ">" "<=" ">=" "=" "<>" "AND" "&" "XOR" "OR"))
+  (list "(" ")" " ** " " NOT " " * " " / " " MOD " " + " " - " " < " " > " " <= " " >= " " = " " <> " " AND " " & " " XOR " " OR "))
 
 (defvar iec61131-multi-line-comment-regex nil
   "Regex for multi-line comments.")
@@ -134,7 +134,7 @@
     (,iec61131-bool-regex  . font-lock-constant-face)
     (,(concat "\\<" (regexp-opt iec61131-keywords t) "\\>") . font-lock-builtin-face)
     (,(concat "\\(" (regexp-opt iec61131-operators t) "\\)") . font-lock-keyword-face)
-    ("\\(:=\\)" . font-lock-preprocessor-face) ;; assignment operator
+    (" := " . font-lock-preprocessor-face) ;; assignment operator
     ("\\<\\([a-zA-Z_]+\\)\\s-*(" . font-lock-function-name-face) ;; function calls
     ))
 
