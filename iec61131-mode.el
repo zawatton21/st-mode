@@ -133,7 +133,9 @@
     ("\\<[0-9]+\\(\\.[0-9]+\\)?\\>" . font-lock-constant-face)
     (,iec61131-bool-regex  . font-lock-constant-face)
     (,(concat "\\<" (regexp-opt iec61131-keywords) "\\>") . font-lock-builtin-face)
-    (,(concat "\\<" (regexp-opt iec61131-operators) "\\>") . font-lock-keyword-face) ;; 追加
+    (,(regexp-opt iec61131-operators) . font-lock-keyword-face)
+    ("\\(:=\\)" . font-lock-preprocessor-face) ;; assignment operator
+    ("\\<\\w+\\s-*(" . font-lock-function-name-face) ;; function calls
     ))
 
 (defun iec61131-indent-line ()
