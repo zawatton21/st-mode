@@ -119,7 +119,6 @@
 (defvar iec61131-bool-regex nil)
 (setq iec61131-bool-regex (rx word-start (or "TRUE" "FALSE" "BIT#1" "BIT#0") word-end))
 
-(defvar iec61131-font-lock-keywords "" nil)
 (setq iec61131-font-lock-keywords
   `(
     (,iec61131-multi-line-comment-regex . font-lock-comment-face)
@@ -132,10 +131,10 @@
     ("\\<.*#.*\\>" . font-lock-constant-face)
     ("\\<[0-9]+\\(\\.[0-9]+\\)?\\>" . font-lock-constant-face)
     (,iec61131-bool-regex  . font-lock-constant-face)
-    (,(concat "\\<" (regexp-opt iec61131-keywords) "\\>") . font-lock-builtin-face)
-    (,(regexp-opt iec61131-operators) . font-lock-keyword-face)
+    (,(concat "\\<" (regexp-opt iec61131-keywords t) "\\>") . font-lock-builtin-face)
+    (,(concat "\\(" (regexp-opt iec61131-operators t) "\\)") . font-lock-keyword-face)
     ("\\(:=\\)" . font-lock-preprocessor-face) ;; assignment operator
-    ("\\<\\w+\\s-*(" . font-lock-function-name-face) ;; function calls
+    ("\\<\\([a-zA-Z_]+\\)\\s-*(" . font-lock-function-name-face) ;; function calls
     ))
 
 (defun iec61131-indent-line ()
