@@ -81,7 +81,7 @@
 
 (defvar iec61131-functions nil "functions to be highlighted.")
 (setq iec61131-functions
-  (list "OUT(" "OUT_T(" "OUT_C(" "SET(" "RST("))
+  (list "OUT" "OUT_T" "OUT_C" "SET" "RST"))
 
 (defvar iec61131-multi-line-comment-regex nil
   "Regex for multi-line comments.")
