@@ -136,7 +136,7 @@
     (,(concat "\\<" (regexp-opt iec61131-keywords t) "\\>") . font-lock-builtin-face)
     (,(concat "\\(" (regexp-opt iec61131-operators t) "\\)") . font-lock-keyword-face)
     (" := " . font-lock-preprocessor-face) ;; assignment operator
-    ("\\<\\([a-zA-Z_]+\\)\\s-*(" . font-lock-function-name-face) ;; function calls
+    ("\\<\\([a-zA-Z0-9_]+\\)\\s-*(" . font-lock-function-name-face) ;; function calls
     ))
 
 (defun iec61131-indent-line ()
