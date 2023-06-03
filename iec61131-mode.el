@@ -77,7 +77,7 @@
 
 (defvar iec61131-operators nil "Operators to be highlighted.")
 (setq iec61131-operators
-  (list "(" ")" " ** " " NOT " " * " " / " " MOD " " + " " - " " < " " > " " <= " " >= " " = " " <> " " AND " " AND NOT " " & " " XOR " " XOR NOT " " OR " " OR NOT "))
+  (list "(" ")" " ** " "NOT " " * " " / " " MOD " " + " " - " " < " " > " " <= " " >= " " = " " <> " " AND " " AND NOT " " & " " XOR " " XOR NOT " " OR " " OR NOT "))
 
 (defvar iec61131-functions nil "functions to be highlighted.")
 (setq iec61131-functions
